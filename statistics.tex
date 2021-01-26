@@ -4,6 +4,8 @@
 \usepackage{nopageno}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {Attached graph} }
 
 \title{Statistics}
 \subtitle{Introduction to Data Science - 2020 Semester A Final Project}
@@ -15,7 +17,7 @@
 \maketitle
 
 \bigskip
-\section{Section 1: Probability and Bayes Theorem}
+\section{Probability and Bayes Theorem}
 \subsection{Question 1}
 \subsubsection{Section a:}
 \textbf{\underline{Question:}}\\
@@ -106,7 +108,7 @@ P(\textrm{yellow from 1994 $|$ 1 green, 1 yellow})=\frac{P(\textrm{1 green, 1 ye
 With the statistics discovered earlier:\[
 P(\textrm{yellow from 1994 $|$ 1 green, 1 yellow})=\frac{0.2\cdot 0.2}{0.054}=\frac{20}{27}
 \]
-This result align with our assumptions.\\\smallskip\\
+This result align with our assumption.\\\smallskip\\
 The probability the yellow candy is from the 1994's bag is:
 \[
 \boxed{P=\frac{20}{27}}
@@ -116,7 +118,7 @@ The probability the yellow candy is from the 1994's bag is:
 
 \subsection{Question 3}
 \textbf{\underline{Question:}}\\
-You went to the doctor due to a penetrating nail. The doctor chose you at random to make a Swine influenza test. It is known that 1 out of 10,000 are infected by Swine influenza. The test is 99\% accurate in the sense that the probability for a false positive is 1\%. which means that the probability a healthy man was diagnosed as ill is 1\%. The probability for false negative (ill man as healthy) is 0\%.\\
+You went to the doctor due to an ingrown toenail. The doctor chose you at random to make a Swine influenza test. It is known that 1 out of 10,000 are infected by Swine influenza. The test is 99\% accurate in the sense that the probability for a false positive is 1\%. which means that the probability a healthy man was diagnosed as ill is 1\%. The probability for false negative (ill man as healthy) is 0\%.\\
 You was found positive to Swine influenza.\\
 
 \noindent
@@ -153,6 +155,176 @@ P(\textrm{ill $|$ positive})=\frac{1\cdot \frac{1}{200}}{\frac{299}{20000}}=\fra
 \]Given positive test and that you came back from Thailand, the probability you are ill is:\[
 \boxed{P=\frac{100}{299}}
 \]
+\newpage
+
+\section{Random Variables}
+\subsection{Question 1}
+\textbf{\underline{Question}}\\
+Roi is playing a dice game with Yael.\\
+Roi will roll 2 six-sided dice, and if the sum of the dice is divisible by 3, he will win 6\$.
+If the sum is not divisible by 3, he will lose 3\$.\\
+What is Roi's expected value of playing this game?\\
+\smallskip\\
+\textbf{\underline{Answer }}\\
+For Roi to get 3\$ the dice sum must be divisible by 3. Between 1 and 12 the numbers divisible by 3 are 3,6,9,12. In any other option Roi will lose 3\$.\\
+\smallskip\\
+The probability for winning is:
+\begin{align*}
+&P(3)+P(6)+P(9)+P(12)\\
+&\frac{2}{36}+\frac{5}{36}+\frac{4}{36}+\frac{1}{36}=\frac{12}{36}=\frac{1}{3}
+\end{align*}
+The probability for losing is $\frac{24}{36}=\frac{2}{3}$\\
+Calculating the expected value, we get:\[
+3\cdot \frac{1}{3}+(-3)\cdot \frac{2}{3}=-1
+\]
+\begin{center}
+\boxed{\textrm{Roi's expected value of playing the game is -1\$}}
+\end{center}
+\subsection{Question 2}
+\textbf{\underline{Question}}\\
+Sharon has challenged Alex to a round of Marker Mixup.
+Marker Mixup is a game where there is a bag of 5 red markers numbered 1 through 5, and another bag with 5 green markers numbered 6 through 10.\\
+Alex will grab 1 marker from each bag, and if the 2 markers add up to more than 12, he will win 5\$, If the sum is exactly 12, he will break even, and If the sum is less than 12, he will
+lose 6\$.\\
+What is Alex's expected value of playing Marker Mixup?\\
+\smallskip\\
+\textbf{\underline{Answer}}\\
+The possible outcomes are the following:\[
+\begin{array}{c|ccccc}
+& 1 & 2 & 3 & 4 & 5\\
+\hline
+6 & 7 & 8 & 9 & 10 & 11\\
+7 & 8 & 9 & 10 & 11 & 12\\
+8 & 9 & 10 & 11 & 12 & 13\\
+9 & 10 & 11 & 12 & 13 & 14\\
+10 & 11 & 12 & 13 & 14 & 15\\
+\end{array}
+\]
+Above 12: $\frac{6}{25}$\quad exactly 12: $\frac{4}{25}$\quad below 12: $\frac{15}{25}$\\
+The expected value will be:\[
+5\cdot \frac{6}{25}+0\cdot \frac{4}{25}+ (-6)\cdot \frac{15}{25}=-2.4
+\]
+\begin{center}
+\boxed{\textrm{Alex's expected value of playing Marker Mixup is -2.4\$}}
+\end{center}
+\newpage
+
+\subsection{Question 3}
+\textbf{\underline{Question}}\\
+A division of a company has 200 employees, 40\% percent of which are male. Each month, the company randomly selects 8 of its employees to have lunch with the CEO.\\
+What are the mean and standard deviation of the number of males selected each
+month?\\
+\smallskip\\
+\textbf{\underline{Answer}}\\
+The mean is the expected value, so:\[
+8\textrm{\tiny (employees per month)}\cdot 0.4\textrm{\tiny (the probability they are male)}=\boxed{3.2}\]\\
+The standard deviation will be calculated by the square root of the variance \\
+First we find the variance, the variance is the squared deviation multiplied by the probability.\\
+For each instance, the probability will be a ``branch'' in the probability tree for the problem multiplied by the time this probability occurs (binomial coefficient).\\
+The reason is that if you look at the tree, the same outcomes will have the same numerators and the same denominators overall.
+We will calculate the probability for each instance:\\
+\begin{align*}
+&P(\textrm{0 males}) =\binom{8}{0}\cdot \frac{120\cdot119\cdot118\cdot117\cdot116\cdot115\cdot114\cdot113}{200\cdot199\cdot198\cdot197\cdot196\cdot195\cdot194\cdot193} =0.0153
+\\
+&P(\textrm{1 male})\ =\binom{8}{1}\cdot \frac{120\cdot119\cdot118\cdot117\cdot116\cdot115\cdot114\cdot80}{200\cdot199\cdot198\cdot197\cdot196\cdot195\cdot194\cdot193}=0.0864
+\\
+&P(\textrm{2 males})=\binom{8}{2}\cdot \frac{120\cdot119\cdot118\cdot117\cdot116\cdot115\cdot80\cdot79}{200\cdot199\cdot198\cdot197\cdot196\cdot195\cdot194\cdot193}=0.2095
+\\
+&P(\textrm{3 males})=\binom{8}{3}\cdot \frac{120\cdot119\cdot118\cdot117\cdot116\cdot80\cdot79\cdot78}{200\cdot199\cdot198\cdot197\cdot196\cdot195\cdot194\cdot193}=0.2842
+\\
+&P(\textrm{4 males})=\binom{8}{4}\cdot \frac{120\cdot119\cdot118\cdot117\cdot80\cdot79\cdot78\cdot77}{200\cdot199\cdot198\cdot197\cdot196\cdot195\cdot194\cdot193}=0.2358
+\\
+&P(\textrm{5 males})=\binom{8}{5}\cdot \frac{120\cdot119\cdot118\cdot80\cdot79\cdot78\cdot77\cdot76}{200\cdot199\cdot198\cdot197\cdot196\cdot195\cdot194\cdot193}=0.1226
+\\
+&P(\textrm{6 males})=\binom{8}{6}\cdot \frac{120\cdot119\cdot80\cdot79\cdot78\cdot77\cdot76\cdot75}{200\cdot199\cdot198\cdot197\cdot196\cdot195\cdot194\cdot193}=0.0389
+\\
+&P(\textrm{7 males})=\binom{8}{7}\cdot \frac{120\cdot80\cdot79\cdot78\cdot77\cdot76\cdot75\cdot74}{200\cdot199\cdot198\cdot197\cdot196\cdot195\cdot194\cdot193}=0.0069
+\\
+&P(\textrm{8 males})=\binom{8}{8}\cdot \frac{80\cdot79\cdot78\cdot77\cdot76\cdot75\cdot74\cdot73}{200\cdot199\cdot198\cdot197\cdot196\cdot195\cdot194\cdot193}=0.0005
+\\
+\end{align*}
+The variance will be:
+\begin{multline*}
+(0-3.2)^2\cdot 0.0168+(1-3.2)^2\cdot 0.0896 + (2-3.2)^2\cdot 0.209 + (3-3.2)^2\cdot 0.2787 + (4-3.2)^2 \cdot 0.2322 +\\
+ (5-3.2)^2 \cdot 0.1239 + (6-3.2)^2 \cdot 0.413 + (7-3.2)^2 \cdot 0.0079 + (8-3.2)^2 \cdot 0.0007=4.836
+\end{multline*}
+The deviation is:\[
+\boxed{\sigma= \sqrt{4.836}=2.199}
+\]
+\newpage
+
+\subsection{Question 4}
+\textbf{\underline{Question}}\\
+Different dealers may sell the same car for different prices.
+The sale prices for a particular car are normally distributed with a mean and standard deviation of 26,000\$ and 2,000\$, respectively.
+ Suppose we select one of these cars at random.
+ Let X = the sale price (in thousands of dollars) for the selected car.\\
+ 
+ Find $P(26<x<30)$\\
+ \smallskip\\
+ \textbf{\underline{Answer}}\\
+We know the standard deviation is 2 (2000\$), we also know that the car sales are normally distributed. a known fact about standard deviation is that 95.4499736\% of the data is within $2\sigma$ from the mean.\\
+Because the distribution is equal on both sides of the mean, the probability for a sale between $26<x<30$ is equal to the probability of $22<x<26$.\\
+That means that if the probability within 2 standard deviation $(22<x<30)$ is 95.4499736\%, then the probability for $26<x<30$ will be half of that.\\
+\begin{center}
+\boxed{P(26<x<30)=47.725\%}
+\end{center}
+DISCLAIMER: in the answer I used the fact that in standard deviation, the probability for every specific option is close to 0.
+In real life, because we are talking about car prices the probability of a 26,000\$ is actually very likely.
+\newpage
+
+\subsection{Question 5}
+\textbf{\underline{Question}}\\
+Given the following distribution, what is $P(x>3)$?\\
+\includegraphics{DSgraph1.jpg}\\
+\smallskip\\
+\textbf{\underline{Answer}}\\
+The probability $P(x>3)$ is the area below the line when $x>3$.\\
+Triangle area is base times height divided by 2.\[
+\frac{b\cdot h}{2}=\frac{2\cdot 0.4}{2}=0.4
+\]
+\[
+\boxed{P(x>3)=0.4}
+\]
+ \newpage
+
+\subsection{Question 6}
+\textbf{\underline{Question}}\\
+A company has 500 employees, and 60\% of them have children.
+Suppose that we randomly select 4 of these employees.\\
+What is the probability that exactly 3 of the 4 employees selected have children?
+\smallskip\\
+\textbf{\underline{Answer}}\\
+60\% of the employees have children, which means $\frac{300}{500}$ employees.\\
+Using the same method from Question 3, we write:\[
+\binom{4}{1}\frac{200_{\textrm{ (no children)}}\cdot 300 \cdot 299 \cdot 298}{500 \cdot 499 \cdot 498 \cdot 497}=4\cdot 0.087=0.346
+\]
+\[
+\boxed{P(\textrm{3 out of 4 have children})=0.346}
+\]
+\newpage
+
+\subsection{Question 7}
+\textbf{\underline{Question}}\\
+Look at the next Graph. What is the expected value of X?\\
+\includegraphics{DSgraph2.jpg}\\
+\smallskip\\
+\textbf{\underline{Answer}}\\
+The expected value for discrete random variables is given by the formula:\[
+E[X]=\Sigma^{k}_{i=1}x_i p_i
+\]
+so in our case:\[
+-10\cdot 0.1+(-5)\cdot0.35+ 0\cdot 0.1 +5 \cdot 0.35 +10\cdot 0.1=0
+\]
+\[
+\boxed{\textrm{Expected value of X is 0}}
+\]
+
+
+
+
+
+
 
 
 
