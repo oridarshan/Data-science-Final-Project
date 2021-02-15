@@ -25,30 +25,32 @@ Around 1/125 of all births are nonidentical twins, and 1/300 are identical twins
 (you can assume that the probability for boys/girls is 1/2)\\\smallskip\\
 \textbf{\underline{Answer:}}\\
 We search for the probability of Elvis to have an identical twin.
-From all the population, the probability is 1/300 (given). How the information we have changes that number?\\
-We know that Elvis had a twin, from all possibilities, 1/300 is the chance for an identical and 1/125 are the chances for a nonidentical twins.\\
+The general probability is 1/300 (given). How the information we have affects that number?\\
+We know Elvis had a twin, of all possibilities, 1/300 is the chance for an identical and 1/125 are the chances for nonidentical twins.\\
 combining these two option we get\[
 \frac{1}{300}+\frac{1}{125}=\frac{17}{1500}
 \]
 
-We won't actually use this number, since with the fact that Elvis had a twin we will look only on the `twin related' statistics.\\
-From all possibilities for twins, what is the probability for an identical twins?\begin{align*}
+We won't actually use this number, since we know that Elvis had a twin we will look only on the `twin related' statistics.\\
+From all possibilities for twins, what is the probability for identical twins?
+\begin{align*}
 \intertext{identical:}
 \frac{1}{300}/\frac{17}{1500}&=\frac{5}{17}\\
 \intertext{nonidentical:}
 \frac{1}{125}/\frac{17}{1500}&=\frac{12}{17}\\
 \end{align*}
 
-We know that the twin was a boy, all of the identical twins are the same gender while only 1/2 of the nonidentical twins will have the same gender (given).\\
+We know the twin was a boy, and all of the identical twins are the same gender while only 1/2 of the nonidentical twins will have the same gender (given).\\
 Elvis can be part of the 1/300 births of identical twins or part of the $(1/125)/2=1/250$ births of nonidentical, same-gender births.\\
 The probability for a same gender twin from all possible twins is:
 \begin{align*}
 P(\textrm{same gender twins})&=\frac{5}{17}+0.5\cdot \frac{12}{17}\\\smallskip\\
 &=\frac{11}{17}
 \end{align*}
-We will use Bayes theorem to calculate the probability for an identical twin given there was a twin from the same gender, as a base we will use the probabilities shown above for identical twins given there was a twin.\[
+We will use Bayes theorem to calculate the probability for an identical twin given there was a twin from the same gender. 
+As a base we will use the probabilities shown above for identical twins given there was a twin.\[
 P(\textrm{identical $|$ same gender})=\frac{P(\textrm{same gender $|$ identical})\cdot P(\textrm{identical})}{P(\textrm{same gender})}
-\]Inserting previus calculations:
+\]Inserting previous calculations:
 \begin{align*}
 P(\textrm{identical $|$ same gender})&=\frac{1\cdot \frac{5}{17}}{\frac{11}{17}}=\frac{5}{11}
 \end{align*}
@@ -59,21 +61,21 @@ The probability Elvis's twin was an identical twin is:
 \newpage
 \subsubsection{Section b}
 \textbf{\underline{Question:}}\\
-There are two cookie bowls, in bowl 1 there are 10 almond cookies and 30 chocolate cookies. in bowl 2 there are 20 almond cookies and 20 chocolate cookies.\\
-Eric chose a random bowl and took 1 random cookie from it. the cookie was a chocolate cookie.\\
-What is the probability that Eric chose bowl 1?\\
+There are two cookie bowls, in Bowl 1 there are 10 almond cookies and 30 chocolate cookies. In Bowl 2 there are 20 almond cookies and 20 chocolate cookies.\\
+Eric chose a random bowl and took 1 random cookie from it. The cookie was a chocolate cookie.\\
+What is the probability that Eric chose Bowl 1?\\
 \textbf{\underline{Answer:}}\\
-The probability to pick bowl 1 is 1/2 (bowl 1 or bowl 2),
+The probability to pick Bowl 1 is 1/2 (Bowl 1 or Bowl 2),
 The probability to pick a chocolate cookie is 50/80=5/8.\\
-Given the cookie was chocolate cookie, the probability for choosing bowl 1 changes according to Bayes theorem:\\
+Given the cookie was a chocolate cookie, the probability for choosing Bowl 1 changes according to Bayes theorem:\\
 \[
-P(\textrm{bowl 1 $|$ chocolate cookie})=\frac{P(\textrm{chocolate cookie $|$ bowl 1})\cdot P(\textrm{bowl 1})}{P(\textrm{chocolate cookie})}
+P(\textrm{bowl 1 $|$ chocolate cookie})=\frac{P(\textrm{chocolate cookie $|$ Bowl 1})\cdot P(\textrm{Bowl 1})}{P(\textrm{chocolate cookie})}
 \]
 Inserting known probabilities:
 \[
 P(\textrm{bowl 1 $|$ chocolate cookie})=\frac{\frac{3}{4}\cdot \frac{1}{2}}{\frac{5}{8}}=\frac{3}{5}
 \]
-The probability Eric chose bowl 1 is:
+The probability Eric chose Bowl 1 is:
 \[
 \boxed{P=\frac{3}{5}}
 \]
@@ -81,17 +83,17 @@ The probability Eric chose bowl 1 is:
 
 \subsection{Question 2}
 \textbf{\underline{Question:}}\\
-In 1995, M\&M company added the blue color. before this year, the color distribution was:\[
+In 1995, M\&M company added the blue color. Before this year, the color distribution was:\[
 \textrm{30\% Brown, 20\% Yellow, 20\% Red, 10\% Green, 10\% Orange, 10\% Tan}
 \]
-Since 1995, the distribution looked like that:\[
+Since 1995, the distribution looks like that:\[
 \textrm{24\% Blue, 20\% Green, 16\% Orange, 14\% Yellow, 13\% Red, 13\% Brown}
 \]
-Your friend have 2 M\&M bags, one from 1994 and one from 1996 and he is not willing to expose which one belongs to which year. But he gives you one candy from each bag. one candy is yellow and the other one is green.\\
+Your friend has 2 M\&M bags, one from 1994 and one from 1996 and he is not willing to expose which one belongs to which year. He gives you one candy from each bag. One candy is yellow and the other one is green.\\
 What is the probability that the yellow candy came from the bag of 1994?\\
 
 \textbf{\underline{Answer:}}\\
-At first glance on the distributions, we can see that the green candy is more likely to come from the 1996's bag while the yellow candy is more likely to come from the 1994's bag. Let's calculate that.\\
+At first glance at the distributions, we can see the green candy is more likely to come from the 1996's bag while the yellow candy is more likely to come from the 1994's bag. Let's calculate that.\\
 
 Assuming Eric chose the candies at random (otherwise Eric decided what option is true), we need to calculate these parameters in order to use Bayes theorem:
 \begin{center}
@@ -108,7 +110,7 @@ P(\textrm{yellow from 1994 $|$ 1 green, 1 yellow})=\frac{P(\textrm{1 green, 1 ye
 With the statistics discovered earlier:\[
 P(\textrm{yellow from 1994 $|$ 1 green, 1 yellow})=\frac{0.2\cdot 0.2}{0.054}=\frac{20}{27}
 \]
-This result align with our assumption.\\\smallskip\\
+This result aligns with our assumption.\\\smallskip\\
 The probability the yellow candy is from the 1994's bag is:
 \[
 \boxed{P=\frac{20}{27}}
@@ -118,8 +120,8 @@ The probability the yellow candy is from the 1994's bag is:
 
 \subsection{Question 3}
 \textbf{\underline{Question:}}\\
-You went to the doctor due to an ingrown toenail. The doctor chose you at random to make a Swine influenza test. It is known that 1 out of 10,000 are infected by Swine influenza. The test is 99\% accurate in the sense that the probability for a false positive is 1\%. which means that the probability a healthy man was diagnosed as ill is 1\%. The probability for false negative (ill man as healthy) is 0\%.\\
-You was found positive to Swine influenza.\\
+You went to the doctor due to an ingrown toenail. The doctor chose you at random to make a Swine influenza test. It is known that 1 out of 10,000 are infected by Swine influenza. The test is 99\% accurate in the sense that the probability for a false positive is 1\%. Which means the probability a healthy man was diagnosed as ill is 1\%. The probability for false negative (ill man as healthy) is 0\%.\\
+You were found positive for Swine influenza.\\
 
 \noindent
 \underline{a:} What is the probability you have Swine influenza?\\
@@ -258,14 +260,14 @@ The deviation is:\[
 Different dealers may sell the same car for different prices.
 The sale prices for a particular car are normally distributed with a mean and standard deviation of 26,000\$ and 2,000\$, respectively.
  Suppose we select one of these cars at random.
- Let X = the sale price (in thousands of dollars) for the selected car.\\
+ Let $x$ be the sale price (in thousands of dollars) for the selected car.\\
  
  Find $P(26<x<30)$\\
  \smallskip\\
  \textbf{\underline{Answer}}\\
-We know the standard deviation is 2 (2000\$), we also know that the car sales are normally distributed. a known fact about standard deviation is that 95.4499736\% of the data is within $2\sigma$ from the mean.\\
+We know the standard deviation is 2 (2000\$), we also know the car sales are normally distributed. a known fact about standard deviation is that 95.4499736\% of the data is within $2\sigma$ from the mean.\\
 Because the distribution is equal on both sides of the mean, the probability for a sale between $26<x<30$ is equal to the probability of $22<x<26$.\\
-That means that if the probability within 2 standard deviation $(22<x<30)$ is 95.4499736\%, then the probability for $26<x<30$ will be half of that.\\
+That means that if the probability within 2 standard deviations $(22<x<30)$ is 95.4499736\%, the probability for $26<x<30$ will be half of that.\\
 \begin{center}
 \boxed{P(26<x<30)=47.725\%}
 \end{center}
@@ -291,7 +293,7 @@ Triangle area is base times height divided by 2.\[
 \subsection{Question 6}
 \textbf{\underline{Question}}\\
 A company has 500 employees, and 60\% of them have children.
-Suppose that we randomly select 4 of these employees.\\
+Suppose we randomly select 4 of these employees.\\
 What is the probability that exactly 3 of the 4 employees selected have children?
 \smallskip\\
 \textbf{\underline{Answer}}\\
@@ -313,7 +315,7 @@ Look at the next Graph. What is the expected value of X?\\
 The expected value for discrete random variables is given by the formula:\[
 E[X]=\Sigma^{k}_{i=1}x_i p_i
 \]
-so in our case:\[
+So in our case:\[
 -10\cdot 0.1+(-5)\cdot0.35+ 0\cdot 0.1 +5 \cdot 0.35 +10\cdot 0.1=0
 \]
 \[
